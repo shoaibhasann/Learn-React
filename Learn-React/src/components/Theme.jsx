@@ -7,17 +7,23 @@ function Theme() {
     backgroundColor: "#61DAFB",
   });
 
+  const [ btnText, setBtnText ] = useState('Enable Dark Mode');
+
   const toggleTheme = () => {
      if(theme.backgroundColor === '#61DAFB'){
         setTheme({
            color: "white",
            backgroundColor: "black"
         });
+
+        setBtnText('Enable Light Mode');
   } else {
     setTheme({
       color: "white",
       backgroundColor: "#61DAFB",
     });
+
+    setBtnText('Enable Dark Mode');
   }
 }
 
@@ -86,7 +92,7 @@ function Theme() {
       commodo consequat.
     </div>
   </div>
-  <button style={theme} onClick={toggleTheme} className='border'>Enable Dark Mode</button>
+  <button style={theme} onClick={toggleTheme} className='border'>{btnText}</button>
 </div>
 
   )
